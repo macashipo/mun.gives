@@ -138,6 +138,6 @@ function redirect() {
     var optVal = $("#selectChannel option:selected").val();
     console.log("Channel: " + optVal,arrLinkByName);
     if(arrLinkByName && arrLinkByNamep[optVal]){
-	window.location.replace("#" + arrLinkByNamep[optVal]);
+	window.location.replace("#" + arrLinkByName[optVal]);
     }
   }
