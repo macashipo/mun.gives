@@ -1,5 +1,11 @@
 var video = document.getElementById('video');
 let source = [
+	"VTV1,https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b5000000.m3u8",
+	"VTV2,https://vips-livecdn.fptplay.net/hda1/vtv2_vhls.smil/chunklist_b5000000.m3u8",
+	"VTV3,https://vips-livecdn.fptplay.net/hda1/vtv3hd_vhls.smil/chunklist_b5000000.m3u8",
+	"VTV5,https://vips-livecdn.fptplay.net/hda2/vtv5hd_vhls.smil/chunklist_b5000000.m3u8",
+	"VTV6,https://vips-livecdn.fptplay.net/hda1/vtv6hd_vhls.smil/chunklist_b5000000.m3u8",
+	"HTV1,https://livecdn.fptplay.net/sdb/htv1_hls.smil/chunklist_b1200000.m3u8",
     "AXN,http://vips-livecdn.fptplay.net/hda3/axnhd_vhls.smil/chunklist_b5000000.m3u8",
     "Warner Bros,http://vips-livecdn.fptplay.net/hda3/warnertv_vhls.smil/chunklist_b5000000.m3u8",
     "Cinema World,https://vips-livecdn.fptplay.net/hda2/cinemawork_vhls.smil/chunklist_b5000000.m3u8",
