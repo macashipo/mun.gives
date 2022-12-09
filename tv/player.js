@@ -145,5 +145,6 @@ function redirect() {
     console.log("Channel: " + optVal,arrLinkByName);
     if(arrLinkByName && arrLinkByName[optVal]){
 	window.location.replace("#" + arrLinkByName[optVal]);
+	playM3u8(arrLinkByName[optVal]);
     }
   }
