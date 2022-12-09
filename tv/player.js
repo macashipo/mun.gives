@@ -42,6 +42,7 @@ let source = [
     "Test2,http://bo50uarv.megogo.xyz/iptv/7V87U4BYW3GNVQ/6181/index.m3u",
 ]
 var arr = [];
+var arrLinkByName = {};
 for(let k of source){
     var s = k;
     if(s){
@@ -50,6 +51,7 @@ for(let k of source){
             name: ss[0],
             value:ss[1]
         })
+	arrLinkByName[ss[0]] = ss[1];
     }
 }
 let _select = document.getElementById("selectChannel");
