@@ -20,9 +20,18 @@
       max-width: 100%;
     }
   </style>
+    <script>
+        function redirect() {
+            var optVal = $("#selectChannel option:selected").val();
+            console.log("Channel: " + optVal);
+            window.location.replace("#" + optVal);
+          }
+    </script>
 <title>M3U8 Player running...</title></head>
 <body>
   <video id="video" style="width: 100%; height: 100%;" controls=""></video>
+<select id='selectChannel' onchange="redirect();">
+</select>
   <script src="player.js"></script>
 </body>
 </html>
