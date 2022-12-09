@@ -119,7 +119,9 @@ function vidFullscreen() {
 var linkPlay = window.location.href.split("#")[1];
 if(linkPlay){
 	console.log("linkPlay",linkPlay);
-	playM3u8(linkPlay);
+	if(linkPlay.startsWith("http")){
+		playM3u8(linkPlay);
+	}
 }
 //playM3u8(window.location.href.split("#")[1])
 $(window).on('load', function () {
