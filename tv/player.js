@@ -137,7 +137,7 @@ $(window).on('load', function () {
 function redirect() {
     var optVal = $("#selectChannel option:selected").val();
     console.log("Channel: " + optVal,arrLinkByName);
-    if(arrLinkByName && arrLinkByNamep[optVal]){
+    if(arrLinkByName && arrLinkByName[optVal]){
 	window.location.replace("#" + arrLinkByName[optVal]);
     }
   }
