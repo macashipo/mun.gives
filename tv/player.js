@@ -131,3 +131,11 @@ $(window).on('load', function () {
     Mousetrap.bind('left', seekLeft);
     Mousetrap.bind('f', vidFullscreen);
 });
+
+function redirect() {
+    var optVal = $("#selectChannel option:selected").val();
+    console.log("Channel: " + optVal,arrLinkByName);
+    if(arrLinkByName && arrLinkByNamep[optVal]){
+	window.location.replace("#" + arrLinkByNamep[optVal]);
+    }
+  }
