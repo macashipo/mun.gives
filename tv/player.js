@@ -31,6 +31,8 @@ let source = [
 	"MBC 1,https://shls-mbc1na-prod-dub.shahid.net/out/v1/84ab37e99d6e4b16b33c6600f94f6ccb/index_8.m3u8",//CORS
 //vws.vegacdn.vn - ok - 10/12/2022
 "Nam a,https://884030f97a.vws.vegacdn.vn/live/_definst_/stream_1_a0acb/chunklist.m3u8",
+"THETHAO_HD,https://856175157.r.vtvcdn.com/ondrm/THETHAO_HD/m30_index.m3u8",
+//cors
 "VTV1 HD,https://8387e1fb5a.vws.vegacdn.vn/live/vtv1/chunklist_2.m3u8",
 "VTV2 HD,https://8387e1fb5a.vws.vegacdn.vn/live/vtv2/chunklist_1.m3u8",
 "VTV3 HD,https://8387e1fb5a.vws.vegacdn.vn/live/vtv3/chunklist_2.m3u8",
