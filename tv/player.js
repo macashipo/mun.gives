@@ -1,6 +1,7 @@
 var video = document.getElementById('video');
 let source = [
 	"Select,Select",
+	"TVOnline VTV5,https://tvonline.vn/channel/vtv5/?source=7",
 	"Test,https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8",
 	"VTV1,https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b5000000.m3u8",
 	"VTV2,https://vips-livecdn.fptplay.net/hda1/vtv2_vhls.smil/chunklist_b5000000.m3u8",
