@@ -1,7 +1,22 @@
 var video = document.getElementById('video');
 let source = [
 	"Select,Select",
-	"VTV VanHoa,https://856175157.r.vtvcdn.com/ondrm/VAN_HOA/m20_index.m3u8",//OK-10/12/2022
+"PHIM TRUYỆN TRONG & NGOÀI NƯỚC,https://856175157.r.vtvcdn.com/ondrm/PHIM_VIET/m20_index.m3u8",//OK-10/12/2022
+"PHIM TRUYỆN TRONG & NGOÀI NƯỚC,https://856175157.r.vtvcdn.com/ondrm/VAN_HOA/m20_index.m3u8",
+"PHIM TRUYỆN TRONG & NGOÀI NƯỚC,https://856175157.r.vtvcdn.com/ondrm/E_CHANNEL/m30_index.m3u8",
+"Thể Thao,https://856175157.r.vtvcdn.com/ondrm/HAY_TV/m30_index.m3u8",
+"KÊNH KHÁC,https://856175157.r.vtvcdn.com/ondrm/D_DRAMAS_HD/m30_index.m3u8",
+"Thiếu Nhi - Hoạt hình,https://856175157.r.vtvcdn.com/ondrm/BIBI/m20_index.m3u8",
+"VĂN HÓA - NGHỆ THUẬT & GIẢI TRÍ,https://856175157.r.vtvcdn.com/ondrm/INFO_TV/m20_index.m3u8",
+"PHIM TRUYỆN TRONG & NGOÀI NƯỚC,https://856175157.r.vtvcdn.com/ondrm/O2_TV/m20_index.m3u8",
+"VĂN HÓA - NGHỆ THUẬT & GIẢI TRÍ,https://856175157.r.vtvcdn.com/ondrm/STYLE_TV_HD/m30_index.m3u8",
+"Quảng Cáo,https://livecdn.fptplay.net/sdb/vtvhyundai_hls.smil/chunklist_b2500000.m3u8",
+"CA NHẠC & THỜI TRANG,https://856175157.r.vtvcdn.com/ondrm/M_CHANNEL/m20_index.m3u8",
+"VĂN HÓA - NGHỆ THUẬT & GIẢI TRÍ,https://nvzoftzsvflivcf.vcdn.com.vn/vtvcab17/vtvcab17@high.m3u8",
+"PHIM TRUYỆN TRONG & NGOÀI NƯỚC,https://856175157.r.vtvcdn.com/ondrm/FILM_TV/m20_index.m3u8",
+"VĂN HÓA - NGHỆ THUẬT & GIẢI TRÍ,https://856175157.r.vtvcdn.com/ondrm/VFAMILY/m20_index.m3u8",
+"Thiếu Nhi - Hoạt hình,https://856175157.r.vtvcdn.com/ondrm/BIBI_PLUS_clear/m20_index.m3u8",
+"GIÁO DỤC - KHOA HỌC - CÔNG NGHỆ & ĐỜI SỐNG,https://856175157.r.vtvcdn.com/ondrm/LIFE_TV/m20_index.m3u8",
 	"VCDN VTV6,https://nvzoftzsvflivcf.vcdn.com.vn/vtv6/vtv6@mid.m3u8",//OK-10/12/2022
 	"VCDN VTV2,https://nvzoftzsvflivcf.vcdn.com.vn/vtv2/vtv2@mid.m3u8",
 	"VCDN vtvcab6,https://nvzoftzsvflivcf.vcdn.com.vn/vtvcab6/vtvcab6@high.m3u8",
