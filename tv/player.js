@@ -246,18 +246,19 @@ if(linkPlay){
 	}
 }
 //playM3u8(window.location.href.split("#")[1])
-$(window).on('load', function () {
-    $('#video').on('click', function(){this.paused?this.play():this.pause();});
-    Mousetrap.bind('space', playPause);
-    Mousetrap.bind('up', volumeUp);
-    Mousetrap.bind('down', volumeDown);
-    Mousetrap.bind('right', seekRight);
-    Mousetrap.bind('left', seekLeft);
-    Mousetrap.bind('f', vidFullscreen);
-});
+// $(window).on('load', function () {
+//     $('#video').on('click', function(){this.paused?this.play():this.pause();});
+//     Mousetrap.bind('space', playPause);
+//     Mousetrap.bind('up', volumeUp);
+//     Mousetrap.bind('down', volumeDown);
+//     Mousetrap.bind('right', seekRight);
+//     Mousetrap.bind('left', seekLeft);
+//     Mousetrap.bind('f', vidFullscreen);
+// });
 
 function redirect() {
-    var optVal = $("#selectChannel option:selected").val();
+var optVal = document.getElementById("selectChannel").value;
+//     var optVal = $("#selectChannel option:selected").val();
     console.log("Channel: " + optVal,arrLinkByName);
     if(arrLinkByName && arrLinkByName[optVal]){
 	window.location.replace("#" + arrLinkByName[optVal]);
