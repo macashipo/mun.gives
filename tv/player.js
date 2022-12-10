@@ -1,12 +1,15 @@
 var video = document.getElementById('video');
 let source = [
 	"Select,Select",
-	"VCDN VTV6,https://nvzoftzsvflivcf.vcdn.com.vn/vtv6/vtv6@mid.m3u8",
+	"VTV VanHoa,https://856175157.r.vtvcdn.com/ondrm/VAN_HOA/m20_index.m3u8",//OK-10/12/2022
+	"VCDN VTV6,https://nvzoftzsvflivcf.vcdn.com.vn/vtv6/vtv6@mid.m3u8",//OK-10/12/2022
 	"VCDN VTV2,https://nvzoftzsvflivcf.vcdn.com.vn/vtv2/vtv2@mid.m3u8",
 	"VCDN vtvcab6,https://nvzoftzsvflivcf.vcdn.com.vn/vtvcab6/vtvcab6@high.m3u8",
-	"TVOnline VTV5,https://tvonline.vn/channel/vtv5/?source=7",
+	"TVOnline VTV5,https://tvonline.vn/channel/vtv5/?source=7",//CORS
+	"2DFTV,https://s@s6.hopslan.com:443/zdff1/tracks-v1a1/mono.m3u8",//OK-10/12/2022
 	"Test,https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8",
-	"VTV1,https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b5000000.m3u8",
+	"MBC 1,https://shls-mbc1na-prod-dub.shahid.net/out/v1/84ab37e99d6e4b16b33c6600f94f6ccb/index_8.m3u8",//CORS
+	"VTV1,https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b5000000.m3u8",//CORS
 	"VTV2,https://vips-livecdn.fptplay.net/hda1/vtv2_vhls.smil/chunklist_b5000000.m3u8",
 	"VTV3,https://vips-livecdn.fptplay.net/hda1/vtv3hd_vhls.smil/chunklist_b5000000.m3u8",
 	"VTV5,https://vips-livecdn.fptplay.net/hda2/vtv5hd_vhls.smil/chunklist_b5000000.m3u8",
