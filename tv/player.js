@@ -1,6 +1,7 @@
 var video = document.getElementById('video');
 let source = [
 	"Select,Select",
+//856175157.r.vtvcdn.com - OK - 10/12/2022
 "PHIM TRUYỆN TRONG & NGOÀI NƯỚC,https://856175157.r.vtvcdn.com/ondrm/PHIM_VIET/m20_index.m3u8",//OK-10/12/2022
 "PHIM TRUYỆN TRONG & NGOÀI NƯỚC,https://856175157.r.vtvcdn.com/ondrm/VAN_HOA/m20_index.m3u8",
 "PHIM TRUYỆN TRONG & NGOÀI NƯỚC,https://856175157.r.vtvcdn.com/ondrm/E_CHANNEL/m30_index.m3u8",
@@ -17,14 +18,30 @@ let source = [
 "VĂN HÓA - NGHỆ THUẬT & GIẢI TRÍ,https://856175157.r.vtvcdn.com/ondrm/VFAMILY/m20_index.m3u8",
 "Thiếu Nhi - Hoạt hình,https://856175157.r.vtvcdn.com/ondrm/BIBI_PLUS_clear/m20_index.m3u8",
 "GIÁO DỤC - KHOA HỌC - CÔNG NGHỆ & ĐỜI SỐNG,https://856175157.r.vtvcdn.com/ondrm/LIFE_TV/m20_index.m3u8",
-	"VCDN VTV6,https://nvzoftzsvflivcf.vcdn.com.vn/vtv6/vtv6@mid.m3u8",//OK-10/12/2022
+	//nvzoftzsvflivcf.vcdn.com.vn - ok - 10/12/2022
+	"VCDN VTV6,https://nvzoftzsvflivcf.vcdn.com.vn/vtv6/vtv6@mid.m3u8",
 	"VCDN VTV2,https://nvzoftzsvflivcf.vcdn.com.vn/vtv2/vtv2@mid.m3u8",
 	"VCDN vtvcab6,https://nvzoftzsvflivcf.vcdn.com.vn/vtvcab6/vtvcab6@high.m3u8",
 	"TVOnline VTV5,https://tvonline.vn/channel/vtv5/?source=7",//CORS
-	"2DFTV,https://s@s6.hopslan.com:443/zdff1/tracks-v1a1/mono.m3u8",//OK-10/12/2022
+	//vtsstr4.tv24.vn - ok - 10/12/2022
+"SCTV8,https://vtsstr4.tv24.vn/live/SCTV8_SD_new.smil/playlist.m3u8",
+	//s@s6.hopslan.com:443 - OK - 10/12/2022
+	"2DFTV,https://s@s6.hopslan.com:443/zdff1/tracks-v1a1/mono.m3u8",
 	"Test,https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8",
 	"MBC 1,https://shls-mbc1na-prod-dub.shahid.net/out/v1/84ab37e99d6e4b16b33c6600f94f6ccb/index_8.m3u8",//CORS
-	"VTV1,https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b5000000.m3u8",//CORS
+//livevlive.vtvcab.vn - ok - 10/12/2022
+"ON SPORT 1,s://livevlive.vtvcab.vn/hls/OS_ONSPORT1/sc-gaFEAA/m40_index.m3u8",
+"ON SPORT 2,s://livevlive.vtvcab.vn/hls/OS_ONSPORT2/sc-gaFEAA/m40_index.m3u8",
+"ON SPORT 3,s://livevlive.vtvcab.vn/hls/OS_ONSPORT3/sc-gaFEAA/m40_index.m3u8",
+"ON SPORT 4,s://livevlive.vtvcab.vn/hls/OS_ONSPORT4/sc-gaFEAA/m40_index.m3u8",
+"ON SPORT 5,s://livevlive.vtvcab.vn/hls/OS_ONSPORT5/sc-gaFEAA/m40_index.m3u8",
+"ON SPORT 6,s://livevlive.vtvcab.vn/hls/OS_ONSPORT6/sc-gaFEAA/m40_index.m3u8",
+"ON SPORT 7,s://livevlive.vtvcab.vn/hls/OS_ONSPORT7/sc-gaFEAA/m40_index.m3u8",
+"ON SPORT 8,s://livevlive.vtvcab.vn/hls/OS_ONSPORT8/sc-gaFEAA/m40_index.m3u8",
+"ON SPORT 9,s://livevlive.vtvcab.vn/hls/OS_ONSPORT9/sc-gaFEAA/m40_index.m3u8",
+"ON SPORT 10,s://livevlive.vtvcab.vn/hls/OS_ONSPORT10/sc-gaFEAA/m40_index.m3u8",
+	//vips-livecdn.fptplay.net - CORS - 10/12/2022
+	"VTV1,https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b5000000.m3u8",
 	"VTV2,https://vips-livecdn.fptplay.net/hda1/vtv2_vhls.smil/chunklist_b5000000.m3u8",
 	"VTV3,https://vips-livecdn.fptplay.net/hda1/vtv3hd_vhls.smil/chunklist_b5000000.m3u8",
 	"VTV5,https://vips-livecdn.fptplay.net/hda2/vtv5hd_vhls.smil/chunklist_b5000000.m3u8",
