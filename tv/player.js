@@ -23,7 +23,7 @@ let source = [
 	"VCDN VTV2,https://nvzoftzsvflivcf.vcdn.com.vn/vtv2/vtv2@mid.m3u8",
 	"VCDN vtvcab6,https://nvzoftzsvflivcf.vcdn.com.vn/vtvcab6/vtvcab6@high.m3u8",
 	//str.vov.gov.vn - OK - 10/12/2022
-	"Radio VOV3,https://str.vov.gov.vn/vovlive/vov3.sdp_aac/playlist.m3u8"
+	"Radio VOV3,https://str.vov.gov.vn/vovlive/vov3.sdp_aac/playlist.m3u8",
 //tvonline.vn - CORS
 //"TVOnline VTV5,https://tvonline.vn/channel/vtv5/?source=7",//CORS
 	//vtsstr4.tv24.vn - ok - 10/12/2022
@@ -32,6 +32,8 @@ let source = [
 	"2DFTV,https://s@s6.hopslan.com:443/zdff1/tracks-v1a1/mono.m3u8",
 	"Test,https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8",
 	"MBC 1,https://shls-mbc1na-prod-dub.shahid.net/out/v1/84ab37e99d6e4b16b33c6600f94f6ccb/index_8.m3u8",//CORS
+	//vcp.myplaytv.com - 
+	"NubeHTV,https://vcp.myplaytv.com/nubehtv/nubehtv/playlist.m3u8",
 //cors
 "TV,https://alpha.tv.online.tm/hls/ch001.m3u8",
 //vws.vegacdn.vn - ok - 10/12/2022
