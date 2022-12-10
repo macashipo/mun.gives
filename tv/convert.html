@@ -1,1 +1,39 @@
-Hello world
+<html><head>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="mousetrap.min.js" charset="utf-8"></script>
+  <style>
+    body{
+      background-color:black;
+    }
+    #video{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      margin: auto;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  </style>
+    <script>
+        function redirect() {
+            var optVal = $("#selectChannel option:selected").val();
+            console.log("Channel: " + optVal);
+            if(arrLinkByName && arrLinkByNamep[optVal]){
+                window.location.replace("#" + arrLinkByNamep[optVal]);
+            }
+          }
+    </script>
+<title>M3U8 Player running...</title></head>
+<body>
+  <video id="video" style="width: 100%; height: 100%;" controls=""></video>
+<select id='selectChannel' onchange="redirect();" style=" position: absolute; left: 0; top: 0; width: 100px; opacity: 0.5; ">
+</select>
+  <script src="player.js"></script>
+</body>
+</html>
