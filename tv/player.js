@@ -22,6 +22,8 @@ let source = [
 	"VCDN VTV6,https://nvzoftzsvflivcf.vcdn.com.vn/vtv6/vtv6@mid.m3u8",
 	"VCDN VTV2,https://nvzoftzsvflivcf.vcdn.com.vn/vtv2/vtv2@mid.m3u8",
 	"VCDN vtvcab6,https://nvzoftzsvflivcf.vcdn.com.vn/vtvcab6/vtvcab6@high.m3u8",
+	//str.vov.gov.vn - OK - 10/12/2022
+	"Radio VOV3,https://str.vov.gov.vn/vovlive/vov3.sdp_aac/playlist.m3u8"
 //tvonline.vn - CORS
 //"TVOnline VTV5,https://tvonline.vn/channel/vtv5/?source=7",//CORS
 	//vtsstr4.tv24.vn - ok - 10/12/2022
