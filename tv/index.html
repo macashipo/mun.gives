@@ -90,26 +90,38 @@
               "https://nvzoftzsvflivcf.vcdn.com.vn/vtvcab6/vtvcab6@high.m3u8"
           }
         },
-        "tshift.fptplay.net":{
+        "tshift.fptplay.net": {
           info: "OK",
           channels: {
-            "HBO 0-10","https://tshift.fptplay.net/dvr/hbo_1500.stream/chunks_dvr_range-0-10.m3u8",
-            "KixHD","https://tshift.fptplay.net/dvr/kixhd_1000.stream/chunks_dvr_range-0-10.m3u8",
+            "HBO 0-10":
+              "https://tshift.fptplay.net/dvr/hbo_1500.stream/chunks_dvr_range-0-10.m3u8",
+            KixHD:
+              "https://tshift.fptplay.net/dvr/kixhd_1000.stream/chunks_dvr_range-0-10.m3u8"
           }
         },
-        "livevlive.vtvcab.vn":{
+        "livevlive.vtvcab.vn": {
           info: "OK",
           channels: {
-            "ON SPORT 1","https://livevlive.vtvcab.vn/hls/OS_ONSPORT1/sc-gaFEAA/m40_index.m3u8",
-            "ON SPORT 2","https://livevlive.vtvcab.vn/hls/OS_ONSPORT2/sc-gaFEAA/m40_index.m3u8",
-            "ON SPORT 3","https://livevlive.vtvcab.vn/hls/OS_ONSPORT3/sc-gaFEAA/m40_index.m3u8",
-            "ON SPORT 4","https://livevlive.vtvcab.vn/hls/OS_ONSPORT4/sc-gaFEAA/m40_index.m3u8",
-            "ON SPORT 5","https://livevlive.vtvcab.vn/hls/OS_ONSPORT5/sc-gaFEAA/m40_index.m3u8",
-            "ON SPORT 6","https://livevlive.vtvcab.vn/hls/OS_ONSPORT6/sc-gaFEAA/m40_index.m3u8",
-            "ON SPORT 7","https://livevlive.vtvcab.vn/hls/OS_ONSPORT7/sc-gaFEAA/m40_index.m3u8",
-            "ON SPORT 8","https://livevlive.vtvcab.vn/hls/OS_ONSPORT8/sc-gaFEAA/m40_index.m3u8",
-            "ON SPORT 9","https://livevlive.vtvcab.vn/hls/OS_ONSPORT9/sc-gaFEAA/m40_index.m3u8",
-            "ON SPORT 10","https://livevlive.vtvcab.vn/hls/OS_ONSPORT10/sc-gaFEAA/m40_index.m3u8",
+            "ON SPORT 1":
+              "https://livevlive.vtvcab.vn/hls/OS_ONSPORT1/sc-gaFEAA/m40_index.m3u8",
+            "ON SPORT 2":
+              "https://livevlive.vtvcab.vn/hls/OS_ONSPORT2/sc-gaFEAA/m40_index.m3u8",
+            "ON SPORT 3":
+              "https://livevlive.vtvcab.vn/hls/OS_ONSPORT3/sc-gaFEAA/m40_index.m3u8",
+            "ON SPORT 4":
+              "https://livevlive.vtvcab.vn/hls/OS_ONSPORT4/sc-gaFEAA/m40_index.m3u8",
+            "ON SPORT 5":
+              "https://livevlive.vtvcab.vn/hls/OS_ONSPORT5/sc-gaFEAA/m40_index.m3u8",
+            "ON SPORT 6":
+              "https://livevlive.vtvcab.vn/hls/OS_ONSPORT6/sc-gaFEAA/m40_index.m3u8",
+            "ON SPORT 7":
+              "https://livevlive.vtvcab.vn/hls/OS_ONSPORT7/sc-gaFEAA/m40_index.m3u8",
+            "ON SPORT 8":
+              "https://livevlive.vtvcab.vn/hls/OS_ONSPORT8/sc-gaFEAA/m40_index.m3u8",
+            "ON SPORT 9":
+              "https://livevlive.vtvcab.vn/hls/OS_ONSPORT9/sc-gaFEAA/m40_index.m3u8",
+            "ON SPORT 10":
+              "https://livevlive.vtvcab.vn/hls/OS_ONSPORT10/sc-gaFEAA/m40_index.m3u8"
           }
         }
       };
@@ -282,7 +294,7 @@
       for (let k of source) {
         var s = k;
         if (s) {
-          var ss = s.split(",");
+          var ss = s.split(":");
           arr.push({
             name: ss[0],
             value: ss[1]
