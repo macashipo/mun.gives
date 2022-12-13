@@ -283,6 +283,7 @@
       }
 
       function playM3u8(url) {
+        video.style.display = "block";
         if (Hls.isSupported()) {
           video.volume = 0.8;
           var hls = new Hls();
