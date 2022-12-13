@@ -106,7 +106,7 @@
           }
         },
         "hqth.me": {
-          info: "OK",
+          info: "CORS",
           channels: {
             SCTV15: "https://hqth.me/Khichtvtv24sctv15",
             SCTV16: "https://hqth.me/Khichtvtv24sctv16",
@@ -425,6 +425,7 @@
         currChannel = optVal;
         console.log("Channel: " + optVal, currChannels[optVal]);
         if (currChannels[optVal]) {
+          window.location.replace("#" + currChannels[optVal]);
           playM3u8(currChannels[optVal]);
         }
       }
