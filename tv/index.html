@@ -38,7 +38,178 @@
     </select>
     <script>
       var video = document.getElementById("video");
+      var cvmtv = `#EXTM3U url-tvg="http://stream.cvmtv.site:5000/epg.xml,http://trada.info/epg.xml"
+#EXTINF:-1 group-title="Kênh trong nước" tvg-id="vtv1hd" tvg-logo="https://raw.githubusercontent.com/chivy141206/cvmedia/main/img/vtv1.png",VTV1 HD
+http://stream.cvmtv.site:1000/VTV1HD?token=live
+#EXTINF:-1 group-title="Kênh trong nước" tvg-id="vtv3hd" tvg-logo="https://raw.githubusercontent.com/chivy141206/cvmedia/main/img/vtv3.png",VTV3 HD
+http://stream.cvmtv.site:1000/VTV3HD?token=live
+#EXTINF:-1 group-title="Kênh trong nước" tvg-id="vtv5hd" tvg-logo="https://raw.githubusercontent.com/chivy141206/cvmedia/main/img/vtv5.png",VTV5 HD
+http://stream.cvmtv.site/vtv5?token=live
+#EXTINF:-1 group-title="Kênh trong nước" tvg-id="vtvcab1hd" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/d6/Logo_Vie_Gi%E1%BA%A3i_Tr%C3%AD.png",Vie Giải Trí
+http://stream.cvmtv.site/vie?token=live
+#EXTINF:-1 group-title="Kênh trong nước" tvg-id="htvthethaohd" tvg-logo="https://raw.githubusercontent.com/chivy141206/cvmedia/main/img/htvtt.png",HTV Thể thao
+http://stream.cvmtv.site/htvtt?token=live
+
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://upload.wikimedia.org/wikipedia/vi/thumb/9/9a/2022_Asian_Games_logo.svg/1200px-2022_Asian_Games_logo.svg.png",ASIAD Live 1
+http://stream.cvmtv.site:8002/EV01?token=asiad
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://upload.wikimedia.org/wikipedia/vi/thumb/9/9a/2022_Asian_Games_logo.svg/1200px-2022_Asian_Games_logo.svg.png",ASIAD Live 2
+http://stream.cvmtv.site:8002/EV02?token=asiad
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://upload.wikimedia.org/wikipedia/vi/thumb/9/9a/2022_Asian_Games_logo.svg/1200px-2022_Asian_Games_logo.svg.png",ASIAD Live 3
+http://stream.cvmtv.site:8002/EV03?token=asiad
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://upload.wikimedia.org/wikipedia/vi/thumb/9/9a/2022_Asian_Games_logo.svg/1200px-2022_Asian_Games_logo.svg.png",ASIAD Live 4
+http://stream.cvmtv.site:8002/EV04?token=asiad
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://upload.wikimedia.org/wikipedia/vi/thumb/9/9a/2022_Asian_Games_logo.svg/1200px-2022_Asian_Games_logo.svg.png",ASIAD Live 5
+http://stream.cvmtv.site:8002/EV05?token=asiad
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://upload.wikimedia.org/wikipedia/vi/thumb/9/9a/2022_Asian_Games_logo.svg/1200px-2022_Asian_Games_logo.svg.png",ASIAD Live 6
+http://stream.cvmtv.site:8002/EV06?token=asiad
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1532314258547503/cctv-5_180817.png",CCTV-5
+http://stream.cvmtv.site/CCTV5?token=live
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1536890041758372/cctv5plus_20180904.png",CCTV-5+
+http://stream.cvmtv.site/CCTV5p?token=live
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://dtat2ks7dludr.cloudfront.net/spnsportsindia/channel_logos/SONY_SportsTen2_HD.png",Sony Sports 2
+http://stream.cvmtv.site/SonyT2?token=live
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://dtat2ks7dludr.cloudfront.net/spnsportsindia/channel_logos/SONY_SportsTen3_HD.png",Sony Sports 3
+http://stream.cvmtv.site/SonyT3?token=live
+#EXTINF:-1 group-title="ASIAD 19" tvg-logo="https://dtat2ks7dludr.cloudfront.net/spnsportsindia/channel_logos/SONY_SportsTen5_HD.png",Sony Sports 5
+http://stream.cvmtv.site/SonyT5?token=live
+
+#EXTINF:-1 group-title="Thể thao tổng hợp" tvg-id="la2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RSI_La_2_2012.svg/1200px-RSI_La_2_2012.svg.png",RSI LA2
+http://stream.cvmtv.site/LA2?token=live
+#EXTINF:-1 group-title="Thể thao tổng hợp" tvg-id="m4" tvg-logo="https://upload.wikimedia.org/wikipedia/hu/thumb/f/fd/M4_logo.png/1200px-M4_logo.png",M4 Sport
+http://stream.cvmtv.site/M4?token=live
+#EXTINF:-1 group-title="Thể thao tổng hợp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/3/3c/Viaplay_logo.png",ViaplayXtra
+http://stream.cvmtv.site/ViaXtra?token=live
+
+#EXTINF:-1 group-title="Premier League - Ngoại hạng Anh" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/37/Star-sports-select-1.png",Star Sports Select 1
+http://stream.cvmtv.site/StarSL1?token=live
+#EXTINF:-1 group-title="Premier League - Ngoại hạng Anh" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/3b/Star-sports-select-2.png",Star Sports Select 2
+http://stream.cvmtv.site/StarSL2?token=live
+#EXTINF:-1 group-title="Premier League - Ngoại hạng Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Setanta-logo.jpg/640px-Setanta-logo.jpg",Setanta Sports + Ukraine
+http://stream.cvmtv.site/Setanta?token=live
+#EXTINF:-1 group-title="Premier League - Ngoại hạng Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/f/f0/NovaSport.png",Nova Sport
+http://stream.cvmtv.site/NovaSp?token=live
+#EXTINF:-1 group-title="Premier League - Ngoại hạng Anh" tvg-id="" tvg-logo="https://raw.githubusercontent.com/chivy141206/cvmedia/main/img/prima1.png",Prima Sport 1
+http://stream.cvmtv.site/PRS1?token=live
+#EXTINF:-1 group-title="Premier League - Ngoại hạng Anh" tvg-id="" tvg-logo="https://raw.githubusercontent.com/chivy141206/cvmedia/main/img/prima2.png",Prima Sport 2
+http://stream.cvmtv.site/PRS2?token=live
+
+#EXTINF:-1 group-title="Canal+ Ba Lan" tvg-id="canalsp1" tvg-logo="https://n-4-3.dcs.redcdn.pl/file/o2/n/edytorEPG/logo/logotype_66245.png",Canal+ Sport 1
+http://stream.cvmtv.site/canal1?token=live
+#EXTINF:-1 group-title="Canal+ Ba Lan" tvg-id="canalsp2" tvg-logo="https://r.dcs.redcdn.pl/https/o2/n/edytorEPG/logo/logotype_66249.png",Canal+ Sport 2
+http://stream.cvmtv.site/canal2?token=live
+#EXTINF:-1 group-title="Canal+ Ba Lan" tvg-id="canalsp5" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/ef/CANAL%2B_Sport_5.png",Canal+ Sport 5
+http://stream.cvmtv.site/canal5?token=live
+#EXTINF:-1 group-title="Canal+ Ba Lan" tvg-id="canalpre" tvg-logo="https://r.dcs.redcdn.pl/http/o2/n/edytorEPG/logo/logotype_815958.png",Canal+ Premium
+http://stream.cvmtv.site/canalpre?token=live
+
+#EXTINF:-1 group-title="Eleven Sports - Ba Lan" tvg-id="eleven1" tvg-logo="https://r.dcs.redcdn.pl/https/o2/n/edytorEPG/logo/logotype_391293.png",Eleven Sports 1
+http://stream.cvmtv.site/E1?token=live
+#EXTINF:-1 group-title="Eleven Sports - Ba Lan" tvg-id="eleven2" tvg-logo="https://r.dcs.redcdn.pl/https/o2/n/edytorEPG/logo/logotype_391296.png",Eleven Sports 2
+http://stream.cvmtv.site/E2?token=live
+#EXTINF:-1 group-title="Eleven Sports - Ba Lan" tvg-id="eleven3" tvg-logo="https://r.dcs.redcdn.pl/https/o2/n/edytorEPG/logo/logotype_391299.png",Eleven Sports 3
+http://stream.cvmtv.site/E3?token=live
+#EXTINF:-1 group-title="Eleven Sports - Ba Lan" tvg-id="eleven4" tvg-logo="https://r.dcs.redcdn.pl/https/o2/n/edytorEPG/logo/logotype_391302.png",Eleven Sports 4
+http://stream.cvmtv.site/E4?token=live
+
+#EXTINF:-1 group-title="Match - Nga" tvg-id="match" tvg-logo="https://new.matchtv.ru/assets/2305181729/images/channels/130.jpg",Match TV
+http://stream.cvmtv.site/Match?token=live
+#EXTINF:-1 group-title="Match - Nga" tvg-id="mf1" tvg-logo="https://new.matchtv.ru/assets/2305181729/images/channels/8.jpg",Match Futbol 1
+http://stream.cvmtv.site/MF1?token=live
+#EXTINF:-1 group-title="Match - Nga" tvg-id="mf2" tvg-logo="https://new.matchtv.ru/assets/2305181729/images/channels/14.jpg",Match Futbol 2
+http://stream.cvmtv.site/MF2?token=live
+#EXTINF:-1 group-title="Match - Nga" tvg-id="mf3" tvg-logo="https://new.matchtv.ru/assets/2305181729/images/channels/140.jpg",Match Futbol 3
+http://stream.cvmtv.site/MF3?token=live
+#EXTINF:-1 group-title="Match - Nga" tvg-id="" tvg-logo="https://new.matchtv.ru/assets/202308281003/images/channels/7.jpg",Match Premier
+http://stream.cvmtv.site/MPre?token=live
+
+#EXTINF:-1 group-title="Sport Klub" tvg-id="" tvg-logo="https://images-web.ug-be.cdn.united.cloud/2020/05/28/13/02/26/sk1hd_logo_16_9_light_160x90_0e2f3e64_327f_4e23_bdc0_1109dec1113a.png",Sport Klub 1
+http://stream.cvmtv.site/SK1?token=live
+#EXTINF:-1 group-title="Sport Klub" tvg-id="" tvg-logo="https://images-web.ug-be.cdn.united.cloud/2020/05/28/13/02/52/sk2hd_logo_16_9_light_160x90_b8e00d92_1743_4d96_b9e2_73e09c30fdd2.png",Sport Klub 2
+http://stream.cvmtv.site/SK2?token=live
+
+#EXTINF:-1 group-title="Eurosport" tvg-id="es1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Eurosport_1_Logo_2015.svg/2560px-Eurosport_1_Logo_2015.svg.png",Eurosport 1
+http://stream.cvmtv.site/ES1?token=live
+#EXTINF:-1 group-title="Eurosport" tvg-id="es2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Eurosport_2_Logo_2015.svg/2560px-Eurosport_2_Logo_2015.svg.png",Eurosport 2
+http://stream.cvmtv.site/ES2?token=live
+
+#EXTINF:-1 group-title="Kênh thể thao Ba Lan" tvg-id="polsatsp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Polsat_Sport_2021_gradient.svg/1200px-Polsat_Sport_2021_gradient.svg.png",Polsat Sport
+http://stream.cvmtv.site/Polsat?token=live
+#EXTINF:-1 group-title="Kênh thể thao Ba Lan" tvg-id="polsatspex" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Polsat_Sport_Extra_2021_gradient.svg/1280px-Polsat_Sport_Extra_2021_gradient.svg.png",Polsat Sport Extra
+http://stream.cvmtv.site/PolsatE?token=live
+#EXTINF:-1 group-title="Kênh thể thao Ba Lan" tvg-id="polsatspn" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Polsat_Sport_News_2021_horizontal_gradient.svg/1920px-Polsat_Sport_News_2021_horizontal_gradient.svg.png",Polsat Sport News
+http://stream.cvmtv.site/PolsatN?token=live
+#EXTINF:-1 group-title="Kênh thể thao Ba Lan" tvg-id="tvpsport" tvg-logo="https://raw.githubusercontent.com/chivy141206/cvmedia/main/img/tvpsport.png",TVP Sport
+http://stream.cvmtv.site/TVPS?token=live
+
+#EXTINF:-1 group-title="Kênh quảng bá - Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/800px-BBC_One_logo_2021.svg.png",BBC One
+http://stream.cvmtv.site/BBC1?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/BBC_Two_logo_2021.svg/640px-BBC_Two_logo_2021.svg.png",BBC Two
+http://stream.cvmtv.site/BBC2?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/ITV1_logo_%282022%29.svg/1920px-ITV1_logo_%282022%29.svg.png",ITV1
+http://stream.cvmtv.site/ITV?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Channel_4_logo_2015.svg/1200px-Channel_4_logo_2015.svg.png",Channel 4
+http://stream.cvmtv.site/Channel4?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/ITV2_logo_2022.svg/1920px-ITV2_logo_2022.svg.png",ITV2
+http://stream.cvmtv.site/ITV2?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/67/ITV3_logo_2022.svg/1200px-ITV3_logo_2022.svg.png",ITV3
+http://stream.cvmtv.site/ITV3?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/57/ITV4_logo_%282022%29.svg/1920px-ITV4_logo_%282022%29.svg.png",ITV4
+http://stream.cvmtv.site/ITV4?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/CBBC_%282023%29.svg/1920px-CBBC_%282023%29.svg.png",CBBC
+http://stream.cvmtv.site/CBBC?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/S4C_logo_2014.svg/1200px-S4C_logo_2014.svg.png",S4C
+http://stream.cvmtv.site/S4C?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Anh" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/BBC_Red_Button_2021.svg/2560px-BBC_Red_Button_2021.svg.png",BBC RB 1
+http://stream.cvmtv.site/BBC_RB?token=live
+
+#EXTINF:-1 group-title="Kênh quảng bá - Trung Quốc" tvg-logo="https://p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1532314258547503/cctv-1_180817.png",CCTV-1
+http://stream.cvmtv.site/CCTV1?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Trung Quốc" tvg-logo="https://p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1532314258547503/cctv-13_180817.png",CCTV-13
+http://stream.cvmtv.site/CCTV13?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Trung Quốc" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/TVB_Jade_logo.svg/1200px-TVB_Jade_logo.svg.png",TVB Jade
+http://stream.cvmtv.site/Jade?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Trung Quốc" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/ViuTV_logo.svg/1920px-ViuTV_logo.svg.png",ViuTV
+http://stream.cvmtv.site/Viu?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Trung Quốc" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/ViuTVsix-logo.svg/1024px-ViuTVsix-logo.svg.png",ViuTVsix
+http://stream.cvmtv.site/Viu6?token=live
+
+#EXTINF:-1 group-title="Kênh quảng bá - Đức" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Das_Erste-Logo_klein.svg/1200px-Das_Erste-Logo_klein.svg.png",Das Erste
+http://stream.cvmtv.site/DasErste?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Đức" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/ZDF_HD_Logo.svg/2560px-ZDF_HD_Logo.svg.png",ZDF
+http://stream.cvmtv.site/ZDF?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Đức" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/RTL_Logo_2021.svg/1280px-RTL_Logo_2021.svg.png",RTL
+http://stream.cvmtv.site/RTL?token=live
+
+#EXTINF:-1 group-title="Kênh quảng bá - Mỹ" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/NBC_logo.svg/800px-NBC_logo.svg.png",NBC
+http://stream.cvmtv.site/NBC?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Mỹ" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/CBS_logo.svg/2560px-CBS_logo.svg.png",CBS
+http://stream.cvmtv.site/CBS?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Mỹ" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/ABC_%282013%29_Dark_Grey.svg/1200px-ABC_%282013%29_Dark_Grey.svg.png",ABC
+http://stream.cvmtv.site/ABC?token=live
+#EXTINF:-1 group-title="Kênh quảng bá - Mỹ" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/FOX_wordmark-red_2.svg/1200px-FOX_wordmark-red_2.svg.png",FOX
+http://stream.cvmtv.site/FOX?token=live
+
+#EXTINF:-1 group-title="Tin tức quốc tế" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/BBC_News_2022_%28Alt%2C_boxed%29.svg/1200px-BBC_News_2022_%28Alt%2C_boxed%29.svg.png",BBC News
+http://stream.cvmtv.site/BBCN?token=live
+#EXTINF:-1 group-title="Tin tức quốc tế" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/CNN.svg/1200px-CNN.svg.png",CNN
+http://stream.cvmtv.site/CNN?token=live
+#EXTINF:-1 group-title="Tin tức quốc tế" tvg-logo="https://static.wikia.nocookie.net/logos/images/a/a2/FRANCE_24.png/revision/latest?cb=20211127035535&path-prefix=vi",France 24 English
+http://stream.cvmtv.site/F24?token=live
+#EXTINF:-1 group-title="Tin tức quốc tế" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Sky-news-logo.png/1200px-Sky-news-logo.png",Sky News
+http://stream.cvmtv.site/SkyN?token=live
+#EXTINF:-1 group-title="Tin tức quốc tế" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/New_Bloomberg_Logo.svg/2560px-New_Bloomberg_Logo.svg.png",Bloomberg
+http://stream.cvmtv.site/BB?token=live
+#EXTINF:-1 group-title="Tin tức quốc tế" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/CNBC_logo.svg/2560px-CNBC_logo.svg.png",CNBC
+http://stream.cvmtv.site/CNBC?token=live
+#EXTINF:-1 group-title="Tin tức quốc tế" tvg-logo="https://upload.wikimedia.org/wikipedia/zh/thumb/1/16/Phoenix_InfoNews.svg/1200px-Phoenix_InfoNews.svg.png",Phoenix Infonews
+http://stream.cvmtv.site/PhxInfo?token=live
+
+`;
       let allSource = {
+        "cvmtv":{
+          info: "OK",
+          channels: cvmtv.replace(/\#EXTM3U.*/g,'').replace(/\#EXTINF.*,/g,'').split('\n').reduce((p,c)=>{let _n = {};if(c){if(!c.startsWith('http')){_n.k=c}else if(p.k){_n[p.k]=c}};return {...p,..._n}})
+        },
         "cdn.vovtv.mediatech.vn": {
           info: "OK",
           channels: {
