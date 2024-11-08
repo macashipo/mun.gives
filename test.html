@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <meta
+      id="viewport"
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <title>Test: Deep Link to Native App Launch</title>
+    <style>
+      body {
+        font-family: "San Francisco", "Helvetica Neue", "Lucida Grande";
+        color: black;
+      }
+      div {
+        text-align: center;
+      }
+      .download-app {
+        color: #999;
+        font-size: 15px;
+      }
+      .download-app a {
+        color: rebeccapurple;
+        font-weight: bold;
+      }
+      .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -180px;
+        margin-left: -145px;
+      }
+      .open-app {
+        margin: 0 0 25px;
+        overflow: hidden;
+        padding: 12px;
+        background-color: #eeeeee;
+        border: 1px solid rebeccapurple;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        color: rebeccapurple;
+        text-decoration: none;
+      }
+
+      .app-logo {
+        background-color: rebeccapurple;
+        margin-bottom: 50px;
+        color: white;
+        padding: 30px;
+        border-radius: 8px;
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="centered">
+      <div>
+        <span class="app-logo">My App</span>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div>
+        <a id="open-app-link" class="open-app" href="javascript:;">
+          Open App1</a
+        >
+      </div>
+      <br />
+      <br />
+      <div class="download-app">
+        If you don't have app installed,
+        <br />
+        please
+        <a
+          href="https://link.masuship.com/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304"
+          >download</a
+        >
+
+        <a
+          href="https://link.masuship.com/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304"
+          >download 2</a
+        >
+        it at App store.
+      </div>
+      <em>This uses Linkedin app store details for testing.</em>
+    </div>
+    <script src="../deeplink-to-native-app.min.js"></script>
+
+    <script>
+      window.onload = function () {
+        console.log("AAAAAAAAAAAAA");
+        // location.replace(
+        //   "masuship://open.app/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304"
+        // );
+        window.location =
+          "masuship://open.app/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304";
+        console.log("BBBBBBBBBBB");
+        // window.location.href =
+        //   "masuship://open.app/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304";
+      };
+      //   !(function ($) {
+      //     $(document).ready(function () {
+      //       /** Initialize Deeplinking ***/
+      //       $(document).ready(function () {
+      //         NativeAppLauncher.init({
+      //           appLauncherElId: "open-app-link", // Element Id of App Launcher button.
+      //           notSupportedMessage:
+      //             "Sorry, you’ll need to use a different browser to do this.",
+      //           universalLinkUrl:
+      //             "https://link.masuship.com/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304",
+      //           appUri: "linkedin://",
+      //           androidAppId: "com.linkedin.android",
+      //           iOsAppStore:
+      //             "https://itunes.apple.com/us/app/linkedin/id288429040?mt=8",
+      //           debug: false, // Optional
+      //           //campaignCode: 'this-is-test-campaign' // optional, this appends campaign on app store url.
+      //         });
+      //       });
+      //     });
+      //   })(jQuery);
+    </script>
+  </body>
+</html>
