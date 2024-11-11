@@ -96,8 +96,16 @@
         // location.replace(
         //   "masuship://open.app/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304"
         // );
-        window.location =
-          "masuship://open.app/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304";
+        var ua = navigator.userAgent.toLowerCase();
+        var isAndroid = ua.indexOf("android") > -1;
+        if (isAndroid) {
+          window.location =
+            "masuship://open.app/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304";
+        } else {
+          window.location =
+            "https://link.masuship.com/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304";
+        }
+
         console.log("BBBBBBBBBBB");
         // window.location.href =
         //   "masuship://open.app/foodServiceDetails?MId=50631b73-eec5-496a-9c74-5e3fb151f304";
