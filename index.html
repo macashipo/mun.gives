@@ -1,1 +1,116 @@
-Hello world
+<html>
+  <head>
+    <meta
+      id="viewport"
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <title>Test: Deep Link to Native App Launch</title>
+    <style>
+      body {
+        font-family: "San Francisco", "Helvetica Neue", "Lucida Grande";
+        color: black;
+      }
+      div {
+        text-align: center;
+      }
+      .download-app {
+        color: #999;
+        font-size: 15px;
+      }
+      .download-app a {
+        color: rebeccapurple;
+        font-weight: bold;
+      }
+      .centered {
+        position: fixed;
+        top: 50%;
+        /* left: 50%; */
+        left: 0;
+        right: 0;
+        margin-top: -180px;
+        /* margin-left: -145px; */
+      }
+      .open-app {
+        margin: 0 0 25px;
+        overflow: hidden;
+        padding: 12px 18px;
+        background-color: #007bff;
+        border: 1px solid #007bff;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+      }
+      .app-logo {
+        margin-bottom: 50px;
+        color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 120px;
+        height: 120px;
+      }
+      .flex-center {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="centered">
+      <div class="flex-center">
+        <div class="app-logo">
+          <img src="img_masu_logo.png" style="width: 100%; height: 100%" />
+        </div>
+      </div>
+      <div>
+        <a
+          id="open-app-link"
+          class="open-app"
+          id="open-app-link"
+          href="#"
+          data-app="#"
+          data-store-ios="6499127470"
+          data-store-android="com.masuapp.masuapp"
+          data-android-scheme="masuship"
+        >
+          Cài đặt</a
+        >
+      </div>
+      <div id="finalUrl" style="width: 200px"></div>
+    </div>
+
+    <script src="../deeplink-to-native-app.min.js"></script>
+
+    <script>
+      window.onload = function () {
+        var idMerchant = findGetParameter("id");
+        if (idMerchant) {
+          window.location =
+            "masuship://open.app/foodServiceDetails?Code=" + idMerchant;
+        } else {
+          window.location = "masuship://open.app";
+        }
+        // var resultUrl = window.document.getElementById("finalUrl");
+        // resultUrl.innerHTML = window.location;
+      };
+
+      function findGetParameter(parameterName) {
+        var result = null,
+          tmp = [];
+        location.search
+          .substr(1)
+          .split("&")
+          .forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+          });
+        return result;
+      }
+    </script>
+    <script src="deep-link.js"></script>
+  </body>
+</html>
