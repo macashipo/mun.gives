@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta charset="UTF-8" />
     <meta
       id="viewport"
       name="viewport"
@@ -68,9 +69,8 @@
       </div>
       <div>
         <a
-          id="open-app-link"
+          id="open-install-app"
           class="open-app"
-          id="open-app-link"
           href="#"
           data-app="#"
           data-store-ios="6499127470"
@@ -80,17 +80,35 @@
           Cài đặt</a
         >
       </div>
+      <br />
+      <br />
+      <div>
+        <a id="open-app-link" class="open-app" href="#" onclick="onOpenApp()">
+          Mở ứng dụng
+        </a>
+      </div>
       <div id="finalUrl" style="width: 200px"></div>
     </div>
 
     <script src="../deeplink-to-native-app.min.js"></script>
 
     <script>
+      function onOpenApp() {
+        var idMerchant = findGetParameter("id");
+        stringLink = "";
+        if (idMerchant) {
+          stringLink = "https://mun.gives?id=" + idMerchant;
+        } else {
+          stringLink = "https://mun.gives";
+        }
+        //https://mun.gives?
+        https: window.open(stringLink, "_self");
+      }
+
       window.onload = function () {
         var idMerchant = findGetParameter("id");
         if (idMerchant) {
-          window.location =
-            "masuship://open.app/foodServiceDetails?Code=" + idMerchant;
+          window.location = "masuship://open.app/merchant?id=" + idMerchant;
         } else {
           window.location = "masuship://open.app";
         }
