@@ -1,0 +1,38 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.masuship.dev",
+      "sha256_cert_fingerprints": [
+        "20:9F:86:5A:77:31:1D:B6:D6:BE:74:BE:3B:46:A1:DA:B8:D4:A9:35:79:C5:61:3D:36:66:8C:47:15:12:49:C9"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.masuship.dev",
+      "sha256_cert_fingerprints": [
+        "12:0F:DE:CC:E3:A7:08:28:AD:71:0B:A3:C3:39:6E:3E:C1:15:30:38:D0:DF:15:97:A6:80:CF:5D:B1:D8:D1:51"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.masuapp.masuapp",
+      "sha256_cert_fingerprints": [
+        "10:70:15:20:5A:05:6D:CB:66:AA:2A:3A:BF:FE:39:E6:14:00:48:ED:B9:BE:C5:47:35:FB:09:F9:66:3A:C0:E9"
+      ]
+    }
+  }
+]

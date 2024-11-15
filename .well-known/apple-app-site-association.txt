@@ -1,0 +1,35 @@
+{
+  "applinks": {
+      "apps": [],
+      "details": [
+           {
+             "appIDs": [ "YSV294M35M.com.masuship.dev" ],
+             "components": [
+               {
+                  "#": "no_universal_links",
+                  "exclude": true,
+                  "comment": "Matches any URL with a fragment that equals no_universal_links and instructs the system not to open it as a universal link."
+               },
+               {
+                  "/": "/*",
+                  "comment": "Matches any URL with a path that starts with /."
+               }
+             ]
+           },
+	  {
+             "appIDs": [ "YSV294M35M.com.masuapp.masuapp" ],
+             "components": [
+               {
+                  "#": "no_universal_links",
+                  "exclude": true,
+                  "comment": "Matches any URL with a fragment that equals no_universal_links and instructs the system not to open it as a universal link."
+               },
+               {
+                  "/": "/*",
+                  "comment": "Matches any URL with a path that starts with /."
+               }
+             ]
+           }
+       ]
+   }
+}
