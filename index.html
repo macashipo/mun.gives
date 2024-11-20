@@ -116,9 +116,9 @@
         var idMerchant = findGetParameter("id");
         stringLink = "";
         if (idMerchant) {
-          stringLink = "https://mun.gives?id=" + idMerchant;
+          stringLink = window.location.origin + "?id=" + idMerchant;
         } else {
-          stringLink = "https://mun.gives";
+          stringLink = window.location.origin;
         }
         console.log("stringLink:", stringLink);
         window.open(stringLink, "_self");
