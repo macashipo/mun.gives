@@ -11,7 +11,8 @@
 
     <div style="margin-top: 30px">
       <a
-        href="https://github.com/macashipo/mun.gives/releases/download/file_apk/portal_internal_chat.apk"
+        id="apk-link"
+        href="https://github.com/macashipo/mun.gives/releases/tag/file_apk"
         style="
           display: inline-block;
           padding: 15px 30px;
@@ -22,8 +23,9 @@
           font-size: 18px;
         "
       >
-        Cài Android (APK)
+        Đang tải thông tin...
       </a>
+      <p id="apk-version" style="margin-top: 10px; color: #888; font-size: 14px"></p>
     </div>
 
     <div style="margin-top: 20px">
@@ -47,5 +49,43 @@
     <p style="margin-top: 20px; color: #555">
       Android: Cho phép cài từ nguồn không xác định trong Cài đặt để cài app.
     </p>
+
+    <script>
+      (function () {
+        var REPO = "macashipo/mun.gives";
+        var TAG = "file_apk";
+        var linkEl = document.getElementById("apk-link");
+        var versionEl = document.getElementById("apk-version");
+
+        fetch("https://api.github.com/repos/" + REPO + "/releases/tags/" + TAG)
+          .then(function (res) {
+            if (!res.ok) throw new Error("GitHub API trả về " + res.status);
+            return res.json();
+          })
+          .then(function (release) {
+            var apks = (release.assets || []).filter(function (a) {
+              return /\.apk$/i.test(a.name);
+            });
+            if (apks.length === 0) throw new Error("Không tìm thấy file APK");
+
+            apks.sort(function (a, b) {
+              return new Date(b.created_at) - new Date(a.created_at);
+            });
+            var latest = apks[0];
+
+            linkEl.href = latest.browser_download_url;
+            linkEl.textContent = "Cài Android (APK)";
+            versionEl.textContent = latest.name;
+          })
+          .catch(function (err) {
+            // Fallback: đưa người dùng tới trang release để tải thủ công
+            linkEl.href =
+              "https://github.com/" + REPO + "/releases/tag/" + TAG;
+            linkEl.textContent = "Cài Android (APK)";
+            versionEl.textContent =
+              "Không tự tải được link mới nhất, bấm để mở trang tải.";
+          });
+      })();
+    </script>
   </body>
 </html>
