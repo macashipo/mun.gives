@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Download v2</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 32px 16px 64px;
+        background: #f5f6f8;
+        color: #1c1e21;
+      }
+      .wrap {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 24px;
+        margin: 0 0 4px;
+        text-align: center;
+      }
+      .sub {
+        text-align: center;
+        color: #6b7280;
+        font-size: 14px;
+        margin: 0 0 28px;
+      }
+      h2 {
+        font-size: 16px;
+        margin: 28px 0 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .badge-os {
+        font-size: 11px;
+        font-weight: 600;
+        padding: 3px 8px;
+        border-radius: 999px;
+        color: #fff;
+      }
+      .android .badge-os {
+        background: #34a853;
+      }
+      .ios .badge-os {
+        background: #007aff;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #e3e5e8;
+        border-radius: 10px;
+        padding: 14px 16px;
+        margin-bottom: 10px;
+      }
+      .fname {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 14px;
+        word-break: break-all;
+        margin-bottom: 4px;
+      }
+      .meta {
+        font-size: 12px;
+        color: #6b7280;
+        margin-bottom: 12px;
+      }
+      .latest {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        color: #b45309;
+        background: #fef3c7;
+        border-radius: 4px;
+        padding: 2px 6px;
+        margin-left: 6px;
+        vertical-align: middle;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        margin-right: 8px;
+      }
+      .btn-apk {
+        background: #34a853;
+      }
+      .btn-ota {
+        background: #007aff;
+      }
+      .btn-dl {
+        background: #fff;
+        color: #1c1e21;
+        border: 1px solid #c9ccd1;
+      }
+      .gen {
+        display: inline-block;
+        font-size: 13px;
+        color: #007aff;
+        cursor: pointer;
+        text-decoration: underline;
+        margin-left: 4px;
+      }
+      .note {
+        font-size: 12px;
+        color: #9ca3af;
+        margin-top: 10px;
+      }
+      .cfg {
+        background: #fff;
+        border: 1px solid #e3e5e8;
+        border-radius: 10px;
+        padding: 12px 16px;
+        margin-bottom: 12px;
+        font-size: 13px;
+        color: #4b5563;
+      }
+      .cfg input {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 13px;
+        padding: 6px 8px;
+        border: 1px solid #c9ccd1;
+        border-radius: 6px;
+        width: 220px;
+        margin-left: 6px;
+      }
+      .empty,
+      .status {
+        text-align: center;
+        color: #6b7280;
+        font-size: 14px;
+        padding: 16px;
+      }
+      .status a {
+        color: #007aff;
+      }
+      .foot {
+        text-align: center;
+        font-size: 12px;
+        color: #9ca3af;
+        margin-top: 32px;
+      }
+      .foot a {
+        color: #9ca3af;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Download App</h1>
+      <p class="sub">Tự động lấy file mới nhất từ release <code>file_apk_v2</code></p>
+
+      <div id="status" class="status">Đang tải danh sách file...</div>
+      <div id="content"></div>
+
+      <p class="foot">
+        <a id="release-link" href="https://github.com/macashipo/mun.gives/releases/tag/file_apk_v2"
+          >Xem toàn bộ file trên GitHub Release</a
+        >
+      </p>
+    </div>
+
+    <script>
+      (function () {
+        var REPO = "macashipo/mun.gives";
+        var TAG = "file_apk_v2";
+        var DEFAULT_BUNDLE_ID = "sigo";
+
+        var statusEl = document.getElementById("status");
+        var contentEl = document.getElementById("content");
+        var releaseUrl = "https://github.com/" + REPO + "/releases/tag/" + TAG;
+        document.getElementById("release-link").href = releaseUrl;
+
+        function esc(s) {
+          return String(s).replace(/[&<>"']/g, function (c) {
+            return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+          });
+        }
+
+        function baseName(name) {
+          return name.replace(/\.[^.]+$/, "");
+        }
+
+        function formatSize(bytes) {
+          if (!bytes) return "";
+          var mb = bytes / 1048576;
+          return mb >= 1 ? mb.toFixed(1) + " MB" : Math.round(bytes / 1024) + " KB";
+        }
+
+        function formatDate(iso) {
+          var d = new Date(iso);
+          if (isNaN(d)) return "";
+          function p(n) {
+            return n < 10 ? "0" + n : "" + n;
+          }
+          return p(d.getDate()) + "/" + p(d.getMonth() + 1) + "/" + d.getFullYear() + " " + p(d.getHours()) + ":" + p(d.getMinutes());
+        }
+
+        // "sigo_v1.0.2(2).ipa" -> {version: "1.0.2", build: "2"}
+        function parseVersion(name) {
+          var v = name.match(/(\d+(?:\.\d+){1,3})/);
+          var b = name.match(/\((\d+)\)/);
+          return { version: v ? v[1] : "1.0.0", build: b ? b[1] : "" };
+        }
+
+        function buildPlist(ipaUrl, bundleId, title, ver) {
+          var version = ver.build ? ver.version + "." + ver.build : ver.version;
+          return (
+            '<?xml version="1.0" encoding="UTF-8"?>\n' +
+            '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n' +
+            '<plist version="1.0">\n' +
+            "  <dict>\n" +
+            "    <key>items</key>\n" +
+            "    <array>\n" +
+            "      <dict>\n" +
+            "        <key>assets</key>\n" +
+            "        <array>\n" +
+            "          <dict>\n" +
+            "            <key>kind</key>\n" +
+            "            <string>software-package</string>\n" +
+            "            <key>url</key>\n" +
+            "            <string>" + esc(ipaUrl) + "</string>\n" +
+            "          </dict>\n" +
+            "        </array>\n" +
+            "        <key>metadata</key>\n" +
+            "        <dict>\n" +
+            "          <key>bundle-identifier</key>\n" +
+            "          <string>" + esc(bundleId) + "</string>\n" +
+            "          <key>bundle-version</key>\n" +
+            "          <string>" + esc(version) + "</string>\n" +
+            "          <key>kind</key>\n" +
+            "          <string>software</string>\n" +
+            "          <key>title</key>\n" +
+            "          <string>" + esc(title) + "</string>\n" +
+            "        </dict>\n" +
+            "      </dict>\n" +
+            "    </array>\n" +
+            "  </dict>\n" +
+            "</plist>\n"
+          );
+        }
+
+        function downloadFile(filename, text) {
+          var blob = new Blob([text], { type: "application/xml" });
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement("a");
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(function () {
+            URL.revokeObjectURL(url);
+          }, 1000);
+        }
+
+        function otaLink(plistUrl) {
+          return "itms-services://?action=download-manifest&url=" + encodeURIComponent(plistUrl);
+        }
+
+        function renderCard(asset, isLatest, buttonsHtml, noteHtml) {
+          return (
+            '<div class="card">' +
+            '<div class="fname">' + esc(asset.name) + (isLatest ? '<span class="latest">MỚI NHẤT</span>' : "") + "</div>" +
+            '<div class="meta">' + formatSize(asset.size) + " · " + formatDate(asset.created_at) + "</div>" +
+            buttonsHtml +
+            (noteHtml || "") +
+            "</div>"
+          );
+        }
+
+        function render(assets) {
+          var apks = [];
+          var ipas = [];
+          var plists = {};
+
+          assets.forEach(function (a) {
+            if (/\.apk$/i.test(a.name)) apks.push(a);
+            else if (/\.ipa$/i.test(a.name)) ipas.push(a);
+            else if (/\.plist$/i.test(a.name)) plists[baseName(a.name)] = a;
+          });
+
+          function byNewest(a, b) {
+            return new Date(b.created_at) - new Date(a.created_at);
+          }
+          apks.sort(byNewest);
+          ipas.sort(byNewest);
+
+          var html = "";
+
+          if (apks.length) {
+            html += '<div class="android"><h2><span class="badge-os">ANDROID</span> File APK (' + apks.length + ")</h2>";
+            apks.forEach(function (a, i) {
+              html += renderCard(
+                a,
+                i === 0,
+                '<a class="btn btn-apk" href="' + esc(a.browser_download_url) + '">Tải &amp; cài APK</a>'
+              );
+            });
+            html +=
+              '<p class="note">Android: bật "Cài đặt từ nguồn không xác định" trong Cài đặt nếu máy hỏi.</p></div>';
+          }
+
+          if (ipas.length) {
+            var needGen = ipas.filter(function (a) {
+              return !plists[baseName(a.name)];
+            }).length;
+
+            html += '<div class="ios"><h2><span class="badge-os">IOS</span> File IPA (' + ipas.length + ")</h2>";
+
+            if (needGen) {
+              html +=
+                '<div class="cfg">Bundle identifier dùng khi tạo file .plist:' +
+                '<input id="bundle-id" value="' + esc(DEFAULT_BUNDLE_ID) + '" /></div>';
+            }
+
+            ipas.forEach(function (a, i) {
+              var plist = plists[baseName(a.name)];
+              var buttons, note;
+              if (plist) {
+                buttons =
+                  '<a class="btn btn-ota" href="' + esc(otaLink(plist.browser_download_url)) + '">Cài đặt (OTA)</a>' +
+                  '<a class="btn btn-dl" href="' + esc(a.browser_download_url) + '">Tải .ipa</a>';
+                note = '<p class="note">Mở trang này bằng Safari trên iPhone để cài trực tiếp.</p>';
+              } else {
+                buttons = '<a class="btn btn-dl" href="' + esc(a.browser_download_url) + '">Tải .ipa</a>';
+                note =
+                  '<p class="note">Chưa có <code>' + esc(baseName(a.name)) + ".plist</code> trong release nên không cài OTA được. " +
+                  '<span class="gen" data-ipa="' + esc(a.browser_download_url) + '" data-name="' + esc(a.name) + '">Tạo file .plist</span>' +
+                  " rồi upload nó vào release này.</p>";
+              }
+              html += renderCard(a, i === 0, buttons, note);
+            });
+            html += "</div>";
+          }
+
+          if (!apks.length && !ipas.length) {
+            html = '<p class="empty">Release <code>' + esc(TAG) + "</code> chưa có file .apk hoặc .ipa nào.</p>";
+          }
+
+          contentEl.innerHTML = html;
+          statusEl.style.display = "none";
+
+          Array.prototype.forEach.call(contentEl.querySelectorAll(".gen"), function (el) {
+            el.addEventListener("click", function () {
+              var name = el.getAttribute("data-name");
+              var base = baseName(name);
+              var bundleEl = document.getElementById("bundle-id");
+              var bundleId = (bundleEl && bundleEl.value.trim()) || DEFAULT_BUNDLE_ID;
+              var xml = buildPlist(el.getAttribute("data-ipa"), bundleId, base, parseVersion(name));
+              downloadFile(base + ".plist", xml);
+            });
+          });
+        }
+
+        fetch("https://api.github.com/repos/" + REPO + "/releases/tags/" + TAG)
+          .then(function (res) {
+            if (!res.ok) throw new Error("GitHub API trả về " + res.status);
+            return res.json();
+          })
+          .then(function (release) {
+            render(release.assets || []);
+          })
+          .catch(function () {
+            statusEl.innerHTML =
+              'Không tải được danh sách file. <a href="' + releaseUrl + '">Mở trang release để tải thủ công</a>.';
+          });
+      })();
+    </script>
+  </body>
+</html>
