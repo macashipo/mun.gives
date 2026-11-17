@@ -50,6 +50,19 @@
       .ios .badge-os {
         background: #007aff;
       }
+      .badge-dev {
+        background: #ea580c !important;
+      }
+      .dev-warn {
+        background: #fff7ed;
+        border: 1px solid #fdba74;
+        color: #9a3412;
+        border-radius: 10px;
+        padding: 12px 16px;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
       .card {
         background: #fff;
         border: 1px solid #e3e5e8;
@@ -279,12 +292,15 @@
         function render(assets) {
           var apks = [];
           var ipas = [];
+          var devIpas = [];
           var plists = {};
 
           assets.forEach(function (a) {
             if (/\.apk$/i.test(a.name)) apks.push(a);
-            else if (/\.ipa$/i.test(a.name)) ipas.push(a);
-            else if (/\.plist$/i.test(a.name)) plists[baseName(a.name)] = a;
+            else if (/\.ipa$/i.test(a.name)) {
+              if (/development/i.test(a.name)) devIpas.push(a);
+              else ipas.push(a);
+            } else if (/\.plist$/i.test(a.name)) plists[baseName(a.name)] = a;
           });
 
           function byNewest(a, b) {
@@ -292,6 +308,29 @@
           }
           apks.sort(byNewest);
           ipas.sort(byNewest);
+          devIpas.sort(byNewest);
+
+          function ipaCardsHtml(list) {
+            var out = "";
+            list.forEach(function (a, i) {
+              var plist = plists[baseName(a.name)];
+              var buttons, note;
+              if (plist) {
+                buttons =
+                  '<a class="btn btn-ota" href="' + esc(otaLink(plist.browser_download_url)) + '">Cài đặt (OTA)</a>' +
+                  '<a class="btn btn-dl" href="' + esc(a.browser_download_url) + '">Tải .ipa</a>';
+                note = '<p class="note">Mở trang này bằng Safari trên iPhone để cài trực tiếp.</p>';
+              } else {
+                buttons = '<a class="btn btn-dl" href="' + esc(a.browser_download_url) + '">Tải .ipa</a>';
+                note =
+                  '<p class="note">Chưa có <code>' + esc(baseName(a.name)) + ".plist</code> trong release nên không cài OTA được. " +
+                  '<span class="gen" data-ipa="' + esc(a.browser_download_url) + '" data-name="' + esc(a.name) + '">Tạo file .plist</span>' +
+                  " rồi upload nó vào release này.</p>";
+              }
+              out += renderCard(a, i === 0, buttons, note);
+            });
+            return out;
+          }
 
           var html = "";
 
@@ -308,40 +347,34 @@
               '<p class="note">Android: bật "Cài đặt từ nguồn không xác định" trong Cài đặt nếu máy hỏi.</p></div>';
           }
 
+          var needGenAny =
+            ipas.filter(function (a) { return !plists[baseName(a.name)]; }).length ||
+            devIpas.filter(function (a) { return !plists[baseName(a.name)]; }).length;
+          var cfgHtml = needGenAny
+            ? '<div class="cfg">Bundle identifier dùng khi tạo file .plist:' +
+              '<input id="bundle-id" value="' + esc(DEFAULT_BUNDLE_ID) + '" /></div>'
+            : "";
+
           if (ipas.length) {
-            var needGen = ipas.filter(function (a) {
-              return !plists[baseName(a.name)];
-            }).length;
-
             html += '<div class="ios"><h2><span class="badge-os">IOS</span> File IPA (' + ipas.length + ")</h2>";
-
-            if (needGen) {
-              html +=
-                '<div class="cfg">Bundle identifier dùng khi tạo file .plist:' +
-                '<input id="bundle-id" value="' + esc(DEFAULT_BUNDLE_ID) + '" /></div>';
-            }
-
-            ipas.forEach(function (a, i) {
-              var plist = plists[baseName(a.name)];
-              var buttons, note;
-              if (plist) {
-                buttons =
-                  '<a class="btn btn-ota" href="' + esc(otaLink(plist.browser_download_url)) + '">Cài đặt (OTA)</a>' +
-                  '<a class="btn btn-dl" href="' + esc(a.browser_download_url) + '">Tải .ipa</a>';
-                note = '<p class="note">Mở trang này bằng Safari trên iPhone để cài trực tiếp.</p>';
-              } else {
-                buttons = '<a class="btn btn-dl" href="' + esc(a.browser_download_url) + '">Tải .ipa</a>';
-                note =
-                  '<p class="note">Chưa có <code>' + esc(baseName(a.name)) + ".plist</code> trong release nên không cài OTA được. " +
-                  '<span class="gen" data-ipa="' + esc(a.browser_download_url) + '" data-name="' + esc(a.name) + '">Tạo file .plist</span>' +
-                  " rồi upload nó vào release này.</p>";
-              }
-              html += renderCard(a, i === 0, buttons, note);
-            });
+            html += cfgHtml;
+            cfgHtml = "";
+            html += ipaCardsHtml(ipas);
             html += "</div>";
           }
 
-          if (!apks.length && !ipas.length) {
+          if (devIpas.length) {
+            html += '<div class="ios ios-dev"><h2><span class="badge-os badge-dev">DEV CLIENT</span> Bản Development (' + devIpas.length + ")</h2>";
+            html +=
+              '<div class="dev-warn">⚠️ Chỉ dành cho dev/QA nội bộ, cần kết nối Metro server mới chạy được. ' +
+              "Bản này dùng chung Bundle ID với app thường — cài bản này sẽ <strong>ghi đè</strong> app thường đang có trên máy.</div>";
+            html += cfgHtml;
+            cfgHtml = "";
+            html += ipaCardsHtml(devIpas);
+            html += "</div>";
+          }
+
+          if (!apks.length && !ipas.length && !devIpas.length) {
             html = '<p class="empty">Release <code>' + esc(TAG) + "</code> chưa có file .apk hoặc .ipa nào.</p>";
           }
 
